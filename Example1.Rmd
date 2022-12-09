@@ -2,9 +2,21 @@
 title: "GIt Example 1"
 output: html_notebook
 ---
+#Front Matter
+```{r}
+library(tidyverse)
+```
+
 
 # create some plot
 ```{r}
 plot(cars, xlab='speed in mph')
+```
+
+```{r}
+ggplot(data=cars, mapping=aes(x= speed, y=dist))+
+  geom_point()+
+  geom_smooth(method='lm', se=F)+
+  labs(x='speed', y='stopping distance')
 ```
 
